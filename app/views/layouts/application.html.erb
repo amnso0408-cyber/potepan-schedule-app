@@ -18,6 +18,21 @@
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+
+  <header>
+    <h1>スケジュール管理アプリ</h1>
+  </header>
+
+ <% if flash[:notice] %>
+  <%= flash[:notice] %>
+ <% end %>
+
+ <% if flash[:alert] %>
+  <%= flash[:alert] %>
+ <% end %>
+
+  <%= yield %>
+  
+</body>
+ 
 </html>
