@@ -1,0 +1,31 @@
+<h2><%= @post.title %></h2>
+
+<table>
+<tr>
+<th>開始日</th>
+<td><%= @post.start_date.strftime("%Y/%m/%d") %></td>
+</tr>
+
+<tr>
+<th>終了日</th>
+<td><%= @post.end_date.strftime("%Y/%m/%d") %></td>
+</tr>
+
+<tr>
+<th>終日</th>
+<td>
+<% if @post.all_day %>
+○
+<% end %>
+</td>
+</tr>
+
+<tr>
+<th>スケジュールメモ</th>
+<td><%= @post.body %></td>
+</tr>
+
+</table>
+
+<%= link_to "一覧へ戻る", posts_path %>
+<%= link_to "編集する", edit_post_path %>

@@ -1,4 +1,8 @@
 <h2>予定一覧</h2>
+<p>本日：<%= Date.current.strftime("%Y/%m/%d") %></p>
+<p>予定の合計：<%= @posts.count %>件</p>
+
+<%= link_to "新規追加", new_post_path %>
 
 <table>
   <tr>
@@ -26,7 +30,7 @@
       <td>
       <%= link_to "詳細", post_path(post) %>
       <%= link_to "編集", edit_post_path(post) %>
-      <%= link_to "削除", post_path(post), data: { turbo_method: :delete } %>
+      <%= link_to "削除", post_path(post), data: { turbo_method: :delete, turbo_confirm: "予定を削除しますか？" } %>
       </td>
     </tr>
   <% end %>
